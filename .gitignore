@@ -1,2 +1,7 @@
 *.png
 
+*.stl
+
+*.skp
+
+.DS_Store
