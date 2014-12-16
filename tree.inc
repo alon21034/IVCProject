@@ -22,7 +22,12 @@
 	object{m_tree_leaf pigment{Green}}
 	object{m_tree_stem pigment{Brown}}
 	rotate<-90,0,0>
+	translate<0.5,0,0.5>
 }
+
+#macro draw_tree_square(X0,Y0,X1,Y1,Z)
+	draw_item_square(m_tree, X0, Y0, X1, Y1, Z)
+#end
 
 //—Test—
 

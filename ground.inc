@@ -12,12 +12,6 @@
 	}
 
 #macro draw_ground_sqar(X0,Y0,X1,Y1,Z)
-union{
-#for (X, X0, X1, 1)
-	#for (Y, Y0, Y1, 1)
-		object{ ground_unit translate<X,Z,Y>}
-	#end
-#end
-}
+	draw_item_square(ground_unit, X0, Y0, X1, Y1, Z)
 #end
 

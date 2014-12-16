@@ -17,7 +17,7 @@ show_axes()
 	camera { 
 		/*ultra_wide_angle*/ 
 		angle 47        
-		location 10*<-1.7,3.0,-2.5>
+		location 8*<-1.7,3.0,-2.5>
 		right     x*image_width/image_height
 		look_at < -0.2, 1.0, 0.75>
 	}
@@ -55,4 +55,12 @@ draw_ground_sqar(23,0,31,21,2*height)
 draw_ground_sqar(27,0,31,4,3*height)
 
 // ::::::::Tree::::::::
+
+// comment now, render too slow
+//draw_tree_square(0,0,1,6,0)
+//draw_tree_square(0,15,10,21,0)
+//draw_tree_square(11,17,22,21,1*height)
+//draw_tree_square(23,17,30,21,2*height)
+//draw_tree_square(27,0,30,3,3*height)
+
 

@@ -18,6 +18,8 @@ box{
 object{m_path translate<X*length*2, Z, Y*length*2>}
 #end
 
+
+// (TODO) change to use utils::draw_item_square
 #macro draw_path_square(X0,Y0,X1,Y1,Z)
 #for (X, X0, X1, 1)
 	#for (Y, Y0, Y1, 1)
