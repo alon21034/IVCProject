@@ -55,15 +55,27 @@ finish{ambient .5 diffuse .1 reflection .25 specular 1 roughness .001}}
 	object{Button2}
 }
 
-#macro open_pok_ball_animation ( A )
+#macro open_pok_ball_animation ( A , P, Q, R)
 union {
-	object {TopHalf rotate<0,0,A>}
-	object{CenterRing scale<.95,.1,.95> rotate<0,0,-A>}
-	object{CenterRing scale<.95,.1,.95> rotate<0,0,A>}
-	object{BottomHalf rotate<0,0,-A>}
-	object{Button1}
-	object{Button2}
+	object {TopHalf rotate<A,0,0> scale<1.01,1.01,1.01>}
+	object{CenterRing scale<.95,.1,.95> rotate<A,0,0>}
+	object{CenterRing scale<.95,.1,.95> rotate<-A,0,0>}
+	object{BottomHalf rotate<-A,0,0>}
+	difference{
+		object{Button1}
+		box{<-2,.05,-2><2,1.1,2>}
+		rotate<-A,0,0>
+	}
+	difference{
+		object{Button2 }
+		box{<-2,-1.1,-2><2,-.05,2>}
+		rotate<A,0,0>
+	}
+	rotate<P,Q,R>
+	
 }
 #end
+
+
 
 
