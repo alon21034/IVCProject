@@ -19,7 +19,7 @@
 }
 
 #declare m_tree = union{
-	object{m_tree_leaf pigment{Green}}
+	object{m_tree_leaf pigment{rgb_256(10,115,5)}}
 	object{m_tree_stem pigment{Brown}}
 	rotate<-90,0,0>
 	translate<0.5,0,0.5>

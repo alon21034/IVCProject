@@ -23,10 +23,10 @@ background{ White }
 		union{
 			object { m_title_outside }
 			object { m_title_p_e}
-			pigment{Black}
+			pigment{Blue}
 		}
 	}
-	translate <-2,-3,0>
+	translate <-1,-3.5,0>
 	rotate <180, 0, 90>
 	scale <.7,.7,.7>
 }
