@@ -11,6 +11,7 @@
 #declare m_tree_leaf = difference{
 	object {m_tree_orig}
 	box{<-1,-1,-0.3>,<1,1,m_threshold>}
+	scale 1.2
 }
 
 #declare m_tree_stem = difference{
@@ -23,6 +24,7 @@
 	object{m_tree_stem pigment{Brown}}
 	rotate<-90,0,0>
 	translate<0.5,0,0.5>
+	scale<0,3,0>
 }
 
 #macro draw_tree_square(X0,Y0,X1,Y1,Z)

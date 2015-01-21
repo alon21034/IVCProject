@@ -71,8 +71,7 @@ union {
 		box{<-2,-1.1,-2><2,-.05,2>}
 		rotate<A,0,0>
 	}
-	rotate<P,Q,R>
-	
+	rotate<P,Q,R>	
 }
 #end
 

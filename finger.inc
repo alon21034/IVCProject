@@ -3,22 +3,25 @@
 
 #declare palm = box {
 	<-1,-1,-1>, <1,1,1>
-	pigment{ Yellow }
 	scale<.8,.8,.4>
+	texture{ HandTexture }
 }
 
-#declare finger = box {
-	<-1,-1,-1>, <1,1,1>
-	scale<.25,1.5,.25>
+#declare finger = sphere_sweep {
+	linear_spline, 2, 
+	<0,0.6,0>, 0.25,
+	<0,-0.6,0>, 0.25
 	translate<0,1,0>
-	pigment{Blue}
+	texture{ HandTexture }
 }
 
 #declare hand = union {
-	object{ palm }
-	object{ finger scale<1,.4,1> translate<-.2,.8,0> rotate<0,0,45,>}
-	object{ finger translate<-.5,0,0>}
-	object{ finger scale<1,.4,1> translate<-.2,.8,0> rotate<0,0,-10>}
-	object{ finger scale<1,.4,1> translate<.1,.8,0> rotate<0,0,-20>}
-	object{ finger scale<1,.3,1> translate<.2,1,0> rotate<0,0,-40>}
+	object{ palm scale 1.2}
+	object{ finger scale<1,1,1> translate<-.2,.8,0> rotate<0,0,45,>}
+	object{ finger translate<-.5,.8,0>}
+	object{ finger scale<1,1,1> translate<-.2,.8,0> rotate<0,0,-10>}
+	object{ finger scale<1,1,1> translate<.1,.8,0> rotate<0,0,-20>}
+	object{ finger scale<1,.75,1> translate<.2,1,0> rotate<0,0,-40>}
 }
+
+//object{ hand }
