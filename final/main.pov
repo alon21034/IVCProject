@@ -27,12 +27,12 @@
 // scene 3-1 animation of throw a poke ball with hand
 // (independent) done (final/scene3_1)
 
-((2sec
+((4sec
 
 // scene 3-2 animation of pokemon go out from a poke ball
 // (independent) sphere sweep
 
-((2sec
+((13sec
 
 // scene 4-1 add two pokemon, rotate camera
 // 4-1+4-2

@@ -21,13 +21,13 @@
 
 #declare Camera_3_3 = camera { 
 	perspective
-	location < time_macro(4, -12, 1, 2), time_macro(2, 6, 1, 2), time_macro(20, 4, 1, 2) >
+	location < time_macro(4, -10, 1, 2), time_macro(2, 6, 1, 2), time_macro(20, 4, 1, 2) >
 	look_at <4,2,4>
 }
 
 #declare Camera_3_4 = camera { 
 	perspective
-	location <time_macro(-12, 8, 8, 3), time_macro(6, 4, 5, 3), 4>
+	location <time_macro(-10, 12, 8, 3), time_macro(6, 4, 5, 3), 4>
 	look_at < time_macro(4, 18, 8, 3) ,2, time_macro(4, 6, 8, 3)>	
 }
 
@@ -47,12 +47,14 @@ sky_sphere {
 	emission rgb <0.8,0.8,1>
 }
 
-fog{fog_type   2
-    distance   50
-    color      White
-    fog_offset 0.1
-    fog_alt    2.0
-    turbulence 0.8}
+fog { 
+	fog_type   2
+	distance   50
+	color      White
+	fog_offset 0.1
+	fog_alt    2.0
+	turbulence 0.8
+}
 
 draw_ground_sqar(-100,-100,131,121,0)
 draw_building(0, 0)
@@ -95,14 +97,15 @@ draw_character(
 #if (clock <= 11.0)
 	camera{ Camera_3_4 }
 	character_walk(2, 6, 18, 6, 1, 8, 3)
-#else
+#else // 11.5
 	camera{ Camera_3_4 }
 	draw_character(18, 6, 0, 1)
 	text {
-		ttf "courier-new.ttf" "!?" .5 0
+		ttf "courier-new.ttf" "!?" .3 0
+		no_shadow
 		pigment { Black }
 		rotate<0,90,0>
-		translate<18,time_macro(3, 1.6, 1, 11),6>
+		translate<18,time_macro(3, 1.6, 0.5, 11),6>
 	}
 #end
 #end

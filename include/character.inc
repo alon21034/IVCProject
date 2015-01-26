@@ -1,19 +1,6 @@
 #include "utils.inc"
 #include "colors.inc"
 
-camera {
-	perspective 
-	location < 0.0, 10.0, 0>
-	right x * 1
-	up y * 3/4
-	angle 60
-	look_at < 0.0, 0.0, 0.0>
-}
-light_source {
-	< 0.0, 100, 100>
-	rgb <1.000000, 1.000000, 1.000000> * 1.0
-}
-
 // head
 #declare m_character_head = intersection {
 	sphere {
@@ -155,4 +142,10 @@ union {
 }
 #end
 
-//object{ get_walk_character(0) rotate<0,0,90> }
+test(-3,-3,3)
+light_source {
+	< -100, -100, 100>
+	rgb <1.000000, 1.000000, 1.000000> * 1.0
+}
+
+object{ get_walk_character( 15 - abs(mod(time_macro(0,8*120, 8, 0),60) - 30) ) rotate<0,45,135> }

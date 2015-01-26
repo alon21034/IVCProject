@@ -9,3 +9,7 @@
 	box {<-1,-1,-1>, <1,1,1> scale<.3,.3,1> translate<2.5,-2.5,1> texture{T_Wood6}}
 	box {<-1,-1,-1>, <1,1,1> scale<.3,.3,1> translate<-2.5,-2.5,1> texture{T_Wood6}}
 }
+
+//background{ White }
+//test(8,8,8)
+//object{ Desk rotate<90,0,0>}

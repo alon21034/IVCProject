@@ -1,8 +1,8 @@
 #include "utils.inc"
-#include "text.pov"
-#include "title.pov"
+#include "text.inc"
+#include "title.inc"
 
-#declare CAMERA_SCENE_2_1 = camera {
+#declare Camera_2_1 = camera {
 	perspective 
 	location < 0.0, 0.0, -5>
 	right x * 1
@@ -11,9 +11,9 @@
 	look_at < 0.0, 0.0, 0.0>
 }
 
-#declare CAMERA_SCENE_2_2 = camera {
+#declare Camera_2_2 = camera {
 	perspective 
-	location < 0.0, 0.0, time_macro(-100, 5,1.5,1.5)>
+	location < 0.0, 0.0, time_macro(-80, -5,1.5,1.5)>
 	right x * 1
 	up y * 3/4
 	angle 60
@@ -21,17 +21,26 @@
 }
 
 light_source {
-	< 0.0, 0, -100>
+	< 30, 30, -100>
 	rgb <1.000000, 1.000000, 1.000000> * 1.0
 }
 
 background{ Black }
 
-camera{ CAMERA_SCENE_2_1 }
-
 #if (clock <= 1.5 )
 object{ m_Text  translate<time_macro(5,-15,2,0),0,0>}
+camera{ Camera_2_1 }
 #else
-camera{ CAMERA_SCENE_2_2 }
+#if (clock <= 3.0)
+camera{ Camera_2_2 }
 object{ pokemon_logo }
+#else
+#if (clock <= 4.0)
+camera{ Camera_2_2 }
+object{ pokemon_logo }
+#else // 5sec
+camera{ Camera_2_2 }
+object { pokemon_logo translate<0,0,time_macro(0,-5,1,4)>}
+#end
+#end
 #end

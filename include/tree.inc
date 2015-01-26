@@ -1,6 +1,7 @@
 #include "colors.inc"
 #include "m_tree.inc"
 #include "utils.inc"
+#include "mTexture.inc"
 
 // tree, origin<0,0,0> height 1z
 
@@ -14,42 +15,21 @@
 	scale 1.2
 }
 
-#declare m_tree_stem = difference{
+#declare m_tree_stem = difference {
 	object {m_tree_orig}
 	box{<1,1,m_threshold>, <-1,-1,1.2>}
 }
 
 #declare m_tree = union{
-	object{m_tree_leaf pigment{rgb_256(10,115,5)}}
-	object{m_tree_stem pigment{Brown}}
+	object{ m_tree_leaf pigment{ TreeGreen } scale<1.2,1.2,3> translate<0,0,-0.4>}
+	object{ m_tree_stem pigment{ Brown } scale < 1.3,1.3,2.5>}
 	rotate<-90,0,0>
 	translate<0.5,0,0.5>
-	scale<0,3,0>
 }
 
 #macro draw_tree_square(X0,Y0,X1,Y1,Z)
 	draw_item_square(m_tree, X0, Y0, X1, Y1, Z)
 #end
 
-//—Test—
-
-//show_axes()
-//
-//camera {
-//	perspective 
-//	location < 5, 0, 0>
-//	right x * 1
-//	up y * 3/4
-//	angle 60
-//	look_at < 0.0, 0.0, 0.0>
-//}
-//light_source {
-//	< 0.0, 100, 100>
-//	rgb <1.000000, 1.000000, 1.000000> * 1.0
-//}
-//object{m_tree_leaf pigment{Green}}
-//object{m_tree_stem pigment{Brown}}
-
-// — End Test —
-
-
+//test(0,0,10)
+//object { m_tree }
